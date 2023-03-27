@@ -9,7 +9,78 @@ SQL-команды
 {% block body %}
 
 <div class="container">
-    <h1> Основные SQL-команды и запросы с примерами </h1>
+    <h3> SQL-команды </h3>
+    <ul>
+        <li> SELECT список полей</li>
+        <li> FROM список таблиц</li>
+        <li> WHERE ограничения на список строк</li>
+        <li> GROUP BY условия группировки</li>
+        <li> HAVING ограничения на строки после группировки</li>
+        <li> ORDER BY порядок сортировки</li>
+        <li> LIMIT ограничение количества записей</li>
+        <li> DISTINCT уникальные значениями столбца</li>
+        <li> BETWEEN используется для выбора значений данных из определённого промежутка</li>
+    </ul>
+    <h5>Агрегатные функции </h5>
+    <h6>пример SELECT COUNT(column_name)</h6>
+    <ul>
+        <li> COUNT(col_name) — возвращает количество строк; </li>
+        <li> SUM(col_name) — возвращает сумму значений в данном столбце; </li>
+        <li> AVG(col_name) — возвращает среднее значение данного столбца; </li>
+        <li> MIN(col_name) — возвращает наименьшее значение данного столбца; </li>
+        <li> MAX(col_name) — возвращает наибольшее значение данного столбца. </li>
+    </ul>
+    <h5>SELECT</h5>
+    <h6> Оператор SELECT используется для извлечения записей из одной или нескольких таблиц</h6>
+    <ul>
+        <li> Если название заключить в двойные кавычки, то он станет регистрочувств. - SELECT 2*3  AS "иМя" </li>
+        <li> Вывод уникальных значений – Select DISTINCT column1, column2 </li>
+        <li> Объединить 2 столбца в 1 - select concat( city.city, ' ', country.country) as full_name</li>
+    </ul>
+    <h5>FROM</h5>
+    <H6> Оператор FROM используется для указания списка таблиц и любых объединений, необходимых для SQL предложения. </H6>
+    <ul>
+        <li> Объединить 2 таблицы SELECT ... FROM city JOIN timezone ON timezone.timezone_id = city.timezone_id </li>
+        <li> Объединить несколько таблиц
+            <ul>
+                <li> FROM таблица1 </li>
+                <li> JOIN таблица2 ON условия_присоединения_таблицы2 </li>
+                <li> JOIN таблица3 ON условия_присоединения_таблицы3 </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h5>WHERE</h5>
+    <h6>Оператор WHERE используется для фильтрации результатов из оператора SELECT, INSERT, UPDATE или DELETE.</h6>
+    <ul>
+        <li> Поиск по условиям SELECT ... FROM ... WHERE last_name = 'Медведев' </li>
+        <li> По неск.усл. WHERE store_id = 200 AND rank_id = 'SELLER' AND first_name = 'Наталия' #(OR-ИЛИ; NOT-не)  </li>
+        <li> Проверка совпадения хотя бы с одним значением WHERE ... IN (100, 300, 500) <strong> или </strong> NOT IN (100, 300, 500)</li>
+        <li> Пустые значения WHERE site_url IS NULL, WHERE opening_hours IS NOT NULL </li>
+        <li> Диапазон - WHERE 30000 <= price AND price <= 60000 <strong> или </strong> WHERE salary BETWEEN 30000 AND 600000; </li>
+        <li> Поиск по части значения WHERE last_name LIKE '__m%' </li>
+    </ul>
+
+
+    <h5>ORDER BY </h5>
+    <h6>Оператор ORDER BY выполняет сортировку выходных значений.</h6>
+    <ul>
+        <li> Отсортировать (в обратном порядке) SELECT ... FROM ... WHERE ... ORDER BY name DESC </li>
+        <li> Отсортировать в рамках группы ORDER BY rank_id, last_name </li>
+        <li> Получить первые 3 - ORDER BY name LIMIT 3 </li>
+        <li> Пропустить первые 5 - ORDER BY price DESC OFFSET 5 </li>
+    </ul>
+
+    <h5>GROUP BY</h5>
+    <h6>Команда GROUP BY группирует результаты при выборке из базы данных.</h6>
+    <ul>
+        <li> Например чтобы подсчитать суммарную зарплату внутри группы, для каждой из групп (23 года, 24 года и 25 лет)</li>
+        <p> SELECT age, SUM(salary) as sum FROM workers GROUP BY age </p>
+    </ul>
+
+
+
+
 
 </div>
 
