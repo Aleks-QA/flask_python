@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+
+{% block body %}
+
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+    <div class=" px-0">
+      <h2 class="display-4 fst-italic">Прототип глоссария QA инженера</h2>
+      <p class="lead my-3">Глоссарий – словарь основных понятий и терминов, относящихся к определенной сфере деятельности или знания. Главное отличие глоссария от словаря состоит в том, что в глоссарий включаются специализированные термины, связанные с изучением конкретной дисциплины.</p>
+    </div>
+  </div>
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <article class="blog-post">
+        <h1 class="pb-4  fst-italic border-bottom">Основы HTML</h1>
+        <dl class=" mb-4 border-bottom">
+          <dt>Язык разметки гипертекста (HTML)</dt>
+          <dd>Язык, используемый для описания и определения содержания веб-страницы.</dd>
+          <dt>Каскадные таблицы стилей (CSS)</dt>
+          <dd>Используется для описания внешнего вида веб-содержимого</dd>
+          <dt>JavaScript (JS)</dt>
+          <dd>Язык программирования, используемый для создания современных веб-сайтов и приложений.</dd>
+        </dl>
+
+        <div class=" mb-4 pb-4 border-bottom">
+          <h2 class="fst-italic mb-4">Базовая структура html страницы</h2>
+          <ul>
+            <strong>&lthtml&gt</strong> является контейнером, который заключает в себе все содержимое веб-страницы.
+            <ul>
+              <li><strong>&lthead&gt</strong> предназначен для хранения служебной информации о странице.</li>
+              <ul>
+                <li><strong> &lttitle&gt</strong> Название вкладки <strong> &lt/title&gt</strong></li>
+                <li><strong>&ltmeta</strong> теги, через них браузер и поисковые машины считывают информацию о сайте.&gt</li>
+              </ul>
+              <strong>&lt/head&gt</strong>
+              <li> <strong>&ltbody&gt</strong> обозначает границы основного содержимого, которое показывается пользователям. </li>
+              <ul>
+                <li><strong>&ltheader&gt</strong>  Шапка сайта. Может повторяться на других страницах. <strong>&ltheader&gt </strong></li>
+                <li><strong>&ltmain&gt</strong>  Основной контент. Остается только на этой странице. <strong>&ltmain&gt </strong></li>
+                <li><strong>&ltfooter&gt</strong>  Подвал сайта. Может повторяться на других страницах. <strong>&ltfooter&gt</strong></li>
+              </ul>
+              <strong>&lt/body&gt</strong>
+            </ul>
+            <strong>&lt/html&gt</strong>
+          </ul>
+        </div>
+        <div >
+          <h2 class="fst-italic mb-4">Базовые теги html страницы</h2>
+          <ul>
+            <!-- <strong>&ltbody&gt</strong><br> -->
+            <li><strong>&ltp&gt</strong> параграф или текстовый абзац, это блочный элемент, всегда начинается с новой строки.<strong>&ltp&gt</strong></li>
+            <li><strong>&lth1&gt</strong> h1-h6 – семейство заголовочных тегов, показывают относительную важность<strong>&lth1&gt</strong></li>
+            <li><strong>&ltbr&gt</strong> устанавливает перевод строки в том месте, где этот тег находится.</li>
+            <li>
+                <strong>&lta href="https://www.youtube.com/" target="_blank"&gt <a href="https://www.youtube.com/" target="_blank">Ссылка</a></strong> <strong>&lt/a&gt</strong> так выглядит ссылка
+            </li>
+            <li><strong>&ltstrong&gt</strong> <strong> Выделенный текст </strong> <strong>&ltstrong&gt</strong></li>
+            <li><strong>&ltem&gt</strong> <em> Курсивный текст </em> <strong>&ltem&gt</strong></li>
+            <li><strong>&ltdel&gt</strong><del>Зачеркнутый текст</del><strong>&lt/del&gt</strong></li>
+            <li><strong>&ltins&gt</strong><ins>Подчеркивание текста</ins><strong>&lt/ins&gt</strong></li>
+            <li><strong>&ltabbr title="Язык разметки гипертекста"&gt</strong><abbr title="Язык разметки гипертекста">HTML</abbr><strong>&lt/abbr&gt</strong>аббревиатура с атрибутом для полной фразы.</li>
+            <li><strong>&ltsup&gt</strong> <sup>надстрочный</sup> <strong>&ltsup&gt</strong> и <strong>&ltsub&gt</strong> <sub>подстрочный</sub> <strong>&ltsub&gt</strong> текст </li>
+            <li>
+                <strong>&ltinput placeholder="поле поиска"&gt</strong>
+                    <input placeholder="поле поиска">
+            </li>
+            <li>
+              <strong>&ltol&gt</strong> устанавливает нумерованный список, содержит элементы в определенной последовательности.<br>
+              <div class="text-block">
+                <strong>&ltli&gt</strong> 1. элемент списка <strong>&ltli&gt</strong><br>
+                <strong>&ltli&gt</strong> 2. элемент списка <strong>&ltli&gt</strong><br>
+                <strong>&ltli&gt</strong> 3. элемент списка <strong>&ltli&gt</strong><br>
+              </div>
+              <strong>&lt/ol&gt</strong>
+            </li>
+            <li>
+              <strong>&ltul&gt</strong> Используется для неупорядоченного списка - в частности для маркированного списка.<br>
+              <div class="text-block">
+                <strong>&ltli&gt</strong> - элемент списка <strong>&ltli&gt</strong><br>
+                <strong>&ltli&gt</strong> - элемент списка <strong>&ltli&gt</strong><br>
+                <strong>&ltli&gt</strong> - элемент списка <strong>&ltli&gt</strong><br>
+              </div>
+              <strong>&lt/ul&gt</strong>
+            </li>
+            <li><strong>&ltdiv&gt</strong>разбивает документ на отдельные части, а так же форматирует стиль содержимого.<strong>&lt/div&gt</strong>
+            </li>
+            <li><strong>&ltimg scr="https://w7.pngwing.com/... width="100" height="100" &gt</strong> добавить изображение</li>
+            <li><img class="aligncenter" src="https://www.9mm.cl/wp-content/uploads/2023/01/openai-logo.png" width="100" ></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="  fst-italic">Пример таблицы html</h4>
+          <div  class="pb-4 ">
+            <table class="table">
+              <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Patronymic</th>
+              </tr>
+              <tr>
+                <td>Aleksandr</td>
+                <td>Aleksandrov</td>
+                <td>Aleksandrovich</td>
+              </tr>
+            </table>
+            <ul>
+              <strong>&lttable&gt</strong> Тег служит контейнером для элементов, определяющих содержимое таблицы.
+              <li class="text-block list">
+                <strong>&lttr&gt</strong>
+                <ol>
+                  <li><strong>&ltth&gt</strong> First name <strong>&lt/th&gt</strong></li>
+                  <li><strong>&ltth&gt</strong> Last name <strong>&lt/th&gt</strong></li>
+                  <li><strong>&ltth&gt</strong> Patronymic <strong>&lt/th&gt</strong></li>
+                </ol>
+                <strong>&lt/tr&gt</strong><br>
+                <strong>&lttr&gt</strong>
+                <ol>
+                  <li><strong>&lttd&gt</strong> Aleksandr <strong>&lt/td&gt</strong></li>
+                  <li><strong>&lttd&gt</strong> Aleksandrov <strong>&lt/td&gt</strong></li>
+                  <li><strong>&lttd&gt</strong> Aleksandrovich <strong>&lt/td&gt</strong></li>
+                </ol>
+                <strong>&lt/tr&gt</strong>
+              </li>
+              <strong>&lt/table&gt</strong>
+            </ul>
+          </div>
+          <div class="pb-4">
+            <h4 class="fst-italic">Таблица HTML-<abbr title="Мнемоника — это кодовое представление символа в HTML, начинающегося со знака амперсанда и завершающееся точкой с запятой">мнемоник</abbr></h4>
+            <div>
+              <table class="table">
+                <tr>
+                  <td>&nbsp<</td>
+                  <td>&nbsp></td>
+                  <td>&nbsp"</td>
+                  <td>&nbsp&rarr;</td>
+                  <td>Пробел</td>
+                  <td>&nbsp&</td>
+                  <td>&nbsp#</td>
+                  <td>&nbsp&laquo;</td>
+                  <td>&nbsp&raquo;</td>
+                </tr>
+                <tr>
+                  <td>&amp;lt;</td>
+                  <td>&amp;gt;</td>
+                  <td>&amp;quot;</td>
+                  <td>&amp;rarr;</td>
+                  <td>&amp;nbsp;</td>
+                  <td>&amp;amp;</td>
+                  <td>&amp;#35;</td>
+                  <td>&amp;laquo;</td>
+                  <td>&amp;raquo;</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-body-tertiary rounded">
+          <h4 class="fst-italic">Идея проекта</h4>
+          <p class="mb-0">Создать ресурс в котором собраны необходимые знания, с возможностью расширения и редактирования</p>
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">Разделы</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="#">Agile</a></li>
+            <li><a href="#">Git</a></li>
+            <li><a href="#">SQL</a></li>
+            <li><a href="#">Теория тестирования</a></li>
+            <li><a href="#">Тестовая документация</a></li>
+            <li><a href="#">Автоматизация тестирования</a></li>
+          </ol>
+        </div>
+        <div class="p-4">
+          <h4 class="fst-italic">Прочие ресурсы</h4>
+          <ol class="list-unstyled">
+            <li><a href="https://github.com/Aleks-QA/project_html_css_js" target="_blank">GitHub</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+body {
+}
+
+li{
+	list-style-type: none;
+}
+
+strong{
+    color: DarkBlue	;
+}
+
+.aligncenter{
+    display: block;
+    margin: 0 auto;
+}
+
+.text-block {
+margin-left:40px;
+}
+
+
+
