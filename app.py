@@ -17,7 +17,7 @@ db = SQLAlchemy(app)
 class Article(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
-    intro = db.Column(db.String(300), nullable=False)
+    # intro = db.Column(db.String(300), nullable=False)
     text = db.Column(db.Text, nullable=False)
     date = db.Column(db.DateTime, default=datetime.utcnow)
 
@@ -59,14 +59,39 @@ def about():
     return render_template("about.html")
 
 
+@app.route('/agile')
+def agile():
+    return render_template("agile.html")
+
+
+@app.route('/aqa')
+def aqa():
+    return render_template("aqa.html")
+
+
+@app.route('/css')
+def css():
+    return render_template("css.html")
+
+
+@app.route('/git')
+def git():
+    return render_template("git.html")
+
+
+@app.route('/sql')
+def sql():
+    return render_template("sql.html")
+
+
 @app.route('/create-article', methods=['POST', 'GET'])  # отслеживание
 def create_article():
     if request.method == "POST":
         title = request.form["title"]
-        intro = request.form["intro"]
+        # intro = request.form["intro"]
         text = request.form["text"]
-
-        article = Article(title=title, intro=intro, text=text)
+        # article = Article(title=title, intro=intro, text=text)
+        article = Article(title=title, text=text)
 
         try:
             db.session.add(article)
@@ -83,7 +108,7 @@ def post_update(id):
     article = Article.query.get(id)
     if request.method == "POST":
         article.title = request.form["title"]
-        article.intro = request.form["intro"]
+        # article.intro = request.form["intro"]
         article.text = request.form["text"]
         try:
             db.session.commit()
@@ -94,6 +119,5 @@ def post_update(id):
         return render_template("post_update.html", article=article)
 
 
-
-if __name__ == "__main__":  # проверяем как запускаем
-    app.run(debug=True)  # вывод ошибок
+if __name__ == "__main__":
+    app.run(debug=True)

@@ -15,12 +15,11 @@
       <p class="lead my-3">Глоссарий – словарь основных понятий и терминов, относящихся к определенной сфере деятельности или знания. Главное отличие глоссария от словаря состоит в том, что в глоссарий включаются специализированные термины, связанные с изучением конкретной дисциплины.</p>
     </div>
   </div>
-
   <div class="row g-5">
     <div class="col-md-8">
       <article class="blog-post">
         <h1 class="pb-4  fst-italic border-bottom">Основы HTML</h1>
-        <dl class=" mb-4 border-bottom">
+        <dl class="mb-4 border-bottom">
           <dt>Язык разметки гипертекста (HTML)</dt>
           <dd>Язык, используемый для описания и определения содержания веб-страницы.</dd>
           <dt>Каскадные таблицы стилей (CSS)</dt>
@@ -28,7 +27,7 @@
           <dt>JavaScript (JS)</dt>
           <dd>Язык программирования, используемый для создания современных веб-сайтов и приложений.</dd>
         </dl>
-
+<!--        Базовая структура html страницы-->
         <div class=" mb-4 pb-4 border-bottom">
           <h2 class="fst-italic mb-4">Базовая структура html страницы</h2>
           <ul>
@@ -51,16 +50,14 @@
             <strong>&lt/html&gt</strong>
           </ul>
         </div>
+<!--        Базовые теги html страницы-->
         <div >
           <h2 class="fst-italic mb-4">Базовые теги html страницы</h2>
           <ul>
-            <!-- <strong>&ltbody&gt</strong><br> -->
             <li><strong>&ltp&gt</strong> параграф или текстовый абзац, это блочный элемент, всегда начинается с новой строки.<strong>&ltp&gt</strong></li>
             <li><strong>&lth1&gt</strong> h1-h6 – семейство заголовочных тегов, показывают относительную важность<strong>&lth1&gt</strong></li>
             <li><strong>&ltbr&gt</strong> устанавливает перевод строки в том месте, где этот тег находится.</li>
-            <li>
-                <strong>&lta href="https://www.youtube.com/" target="_blank"&gt <a href="https://www.youtube.com/" target="_blank">Ссылка</a></strong> <strong>&lt/a&gt</strong> так выглядит ссылка
-            </li>
+            <li><strong>&lta href="https://www.youtube.com/" target="_blank"&gt <a href="https://www.youtube.com/" target="_blank">Ссылка</a></strong> <strong>&lt/a&gt</strong> так выглядит ссылка</li>
             <li><strong>&ltstrong&gt</strong> <strong> Выделенный текст </strong> <strong>&ltstrong&gt</strong></li>
             <li><strong>&ltem&gt</strong> <em> Курсивный текст </em> <strong>&ltem&gt</strong></li>
             <li><strong>&ltdel&gt</strong><del>Зачеркнутый текст</del><strong>&lt/del&gt</strong></li>
@@ -95,8 +92,9 @@
             <li><img class="aligncenter" src="https://www.9mm.cl/wp-content/uploads/2023/01/openai-logo.png" width="100" ></li>
           </ul>
         </div>
+<!--        Таблицы-->
         <div>
-          <h4 class="  fst-italic">Пример таблицы html</h4>
+          <h4 class="fst-italic">Пример таблицы html</h4>
           <div  class="pb-4 ">
             <table class="table">
               <tr>
@@ -163,22 +161,22 @@
         </div>
       </article>
     </div>
+<!--    Разделы-->
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
         <div class="p-4 mb-3 bg-body-tertiary rounded">
           <h4 class="fst-italic">Идея проекта</h4>
           <p class="mb-0">Создать ресурс в котором собраны необходимые знания, с возможностью расширения и редактирования</p>
         </div>
-
         <div class="p-4">
           <h4 class="fst-italic">Разделы</h4>
           <ol class="list-unstyled mb-0">
-            <li><a href="#">Agile</a></li>
-            <li><a href="#">Git</a></li>
-            <li><a href="#">SQL</a></li>
-            <li><a href="#">Теория тестирования</a></li>
-            <li><a href="#">Тестовая документация</a></li>
-            <li><a href="#">Автоматизация тестирования</a></li>
+            <li><a href="/posts">Теория тестирования</a></li>
+            <li><a href="/aqa">Selenium и Python</a></li>
+            <li><a href="/agile">Методология Agile</a></li>
+            <li><a href="/git">Команды Git</a></li>
+            <li><a href="/sql">Команды SQL</a></li>
+            <li><a href="/css">Свойства CSS</a></li>
           </ol>
         </div>
         <div class="p-4">
