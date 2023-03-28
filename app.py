@@ -7,6 +7,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 app.config['SQlALCHEMY_TRACK_MODIFICATION'] = False
 db = SQLAlchemy(app)
 
+
 # > python
 # >>> from app import app, db
 # >>> app.app_context().push()
@@ -17,7 +18,6 @@ db = SQLAlchemy(app)
 class Article(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
-    # intro = db.Column(db.String(300), nullable=False)
     text = db.Column(db.Text, nullable=False)
     date = db.Column(db.DateTime, default=datetime.utcnow)
 
@@ -25,8 +25,8 @@ class Article(db.Model):
         return '<Article %r>' % self.id
 
 
-@app.route('/')  # отслеживание
-@app.route('/home')  # отслеживание
+@app.route('/')
+@app.route('/home')
 def index():
     return render_template("index.html")
 
@@ -88,9 +88,7 @@ def sql():
 def create_article():
     if request.method == "POST":
         title = request.form["title"]
-        # intro = request.form["intro"]
         text = request.form["text"]
-        # article = Article(title=title, intro=intro, text=text)
         article = Article(title=title, text=text)
 
         try:

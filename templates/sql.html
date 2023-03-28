@@ -49,7 +49,6 @@ SQL-команды
             </ul>
         </li>
     </ul>
-
     <h5>WHERE</h5>
     <h6>Оператор WHERE используется для фильтрации результатов из оператора SELECT, INSERT, UPDATE или DELETE.</h6>
     <ul>
@@ -60,8 +59,6 @@ SQL-команды
         <li> Диапазон - WHERE 30000 <= price AND price <= 60000 <strong> или </strong> WHERE salary BETWEEN 30000 AND 600000; </li>
         <li> Поиск по части значения WHERE last_name LIKE '__m%' </li>
     </ul>
-
-
     <h5>ORDER BY </h5>
     <h6>Оператор ORDER BY выполняет сортировку выходных значений.</h6>
     <ul>
@@ -77,11 +74,6 @@ SQL-команды
         <li> Например чтобы подсчитать суммарную зарплату внутри группы, для каждой из групп (23 года, 24 года и 25 лет)</li>
         <p> SELECT age, SUM(salary) as sum FROM workers GROUP BY age </p>
     </ul>
-
-
-
-
-
 </div>
 
 {% endblock %}
