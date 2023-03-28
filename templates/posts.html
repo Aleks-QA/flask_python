@@ -9,14 +9,13 @@
 {% block body %}
 
 <div class="container">
-    <h1> Все статьи на сайте</h1>
+    <h1 class="mb-4">Теория тестирования</h1>
     {% if articles|length > 0 %}
         {% for elements in articles %}
-        <div class="alert alert-info">
-            <h2> {{ elements.title }} </h2>
-            <p>{{ elements.text }}</p>
-<!--            <p>{{ elements.intro }}</p>-->
-            <p><b>Дата: {{ elements.date.date() }}</b></p>
+        <div class="post_style">
+            <h4><tt> {{ elements.title }} </tt></h4>
+            <pre>{{ elements.text }}</pre>
+            <p><b><tt>Дата: {{ elements.date.date() }}</tt></b></p>
             <a href="/posts/{{elements.id}}" class="btn btn-warning">Отредактировать</a>
         </div>
         {% endfor %}

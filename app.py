@@ -1,4 +1,5 @@
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, url_for, request, redirect, abort
+from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -33,7 +34,7 @@ def index():
 
 @app.route('/posts')
 def posts():
-    articles = Article.query.order_by(Article.date.desc()).all()  # все записи отсортированные по дате
+    articles = Article.query.order_by(Article.date.desc()).all()
     return render_template("posts.html", articles=articles)
 
 
@@ -84,7 +85,38 @@ def sql():
     return render_template("sql.html")
 
 
-@app.route('/create-article', methods=['POST', 'GET'])  # отслеживание
+
+
+
+
+#
+# @app.route("/todo/<int:id>", methods=["PUT"])
+# def update_todo(id):
+#     data = get_data()
+#     if id < 0 or id >= len(data):
+#         abort(404)
+#     updated_todo = request.json
+#     if updated_todo is None:
+#         abort(400)
+#     data[id] = updated_todo
+#     save_data(data)
+#     return "OK"
+#
+
+
+#
+# @app.route("/todo", methods=["POST"])
+# def add_new_article():
+#     new_article = request.json
+#     if new_article is None:
+#         abort(400)
+#     data = get_data()
+#     data.append(new_todo)
+#     save_data(data)
+#     return "OK", 201
+
+
+@app.route('/create-article', methods=['POST', 'GET'])
 def create_article():
     if request.method == "POST":
         title = request.form["title"]
@@ -106,7 +138,6 @@ def post_update(id):
     article = Article.query.get(id)
     if request.method == "POST":
         article.title = request.form["title"]
-        # article.intro = request.form["intro"]
         article.text = request.form["text"]
         try:
             db.session.commit()

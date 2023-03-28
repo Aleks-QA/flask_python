@@ -2,8 +2,43 @@
 	list-style-type: none;
 }
 
+.style_body{
+    /*background-color: #f0f0f0;*/
+    background-color: white;
+}
+
+pre{
+    margin:10px 0 10px 30px;
+    padding:10px;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+.post_style{
+    font-size: 19px;
+	margin-top:  10px;
+	margin-left:  40px;
+	margin-right:  40px;
+	padding: 20px;
+ 	color: rgba(0,0,0,0.95);
+ 	/*border: 2px solid  dodgerblue;*/
+ 	border: 2px solid  grey;
+	border-radius: 10px;
+ 	background-color: #f6f6f6;
+	opacity: 0.85;
+	box-shadow: 3px 3px 5px grey;
+}
+
+.post_style:hover{
+    background-color: #edf7ff;
+}
+
+
 strong{
-    color: DarkBlue	;
+    color: #000e66;
 }
 
 .nav-pills{
@@ -21,3 +56,22 @@ strong{
 
 
 
+#test{
+    font-size: 15px;
+	transform: scale(1.3);/*трансформирование элемента, scale-изменить размер*/
+	margin:  10px;/*наружние отступы*/
+	margin-top:  1px;/*наружние отступы сверху*/
+	margin-left:  30px;/*наружние отступы слево*/
+	margin-right:  30px;/*наружние отступы справо*/
+	padding: 15px;/*внутрение отступы*/
+ 	color: rgba(0,0,0,0.75); /* цвет текста, 0.75 непрозрачность */
+ 	border: 2px dashed grey;/*рамка*/
+ 	background-color: #e6e9f0;/*фон блока*/
+	border-radius: 10px;/*закруглить углы рамки*/
+	opacity: 0.8;/*0.8 непрозрачность блока*/
+	box-shadow: 3px 3px 5px black;/*Тень блока*/
+	width: auto;/*ширина*/
+	height: auto;/*высота*/
+	display: block;/*видимость на экране*/
+	text-align: left;/*расположение текста*/
+}
