@@ -15,13 +15,20 @@
 }
 
 .style_body{
-    /*background-color: #f0f0f0;*/
     background-color: white;
 }
 
+#left{
+    float: left;
+}
+
+#right{
+    float: right;
+}
+
+
 pre{
-    margin:10px 0 10px 30px;
-    padding:10px;
+    margin:10px 1px 10px 30px;
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;
     white-space: -pre-wrap;
@@ -34,9 +41,11 @@ pre{
 	margin-top:  10px;
 	margin-left:  40px;
 	margin-right:  40px;
-	padding: 20px;
+	padding-top: 15px;
+    padding-right: 30px;
+    padding-bottom: 60px;
+    padding-left: 30px;
  	color: rgba(0,0,0,0.95);
- 	/*border: 2px solid  dodgerblue;*/
  	border: 2px solid  grey;
 	border-radius: 10px;
  	background-color: #f6f6f6;

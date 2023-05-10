@@ -12,11 +12,11 @@
     <h1 class="mb-4">Теория тестирования</h1>
     {% if articles|length > 0 %}
         {% for elements in articles %}
-        <div class="post_style">
+        <div class="post_style ">
             <h4><tt> {{ elements.title }} </tt></h4>
             <pre>{{ elements.text }}</pre>
-            <p><b><tt>Дата: {{ elements.date.date() }}</tt></b></p>
-            <a href="/posts/{{elements.id}}" class="btn btn-warning">Отредактировать</a>
+            <p id="right"><b><tt>Дата публикации: {{ elements.date.date() }}</tt></b></p>
+            <div id="left"><a href="/posts/{{elements.id}}" class="btn btn-warning">Отредактировать</a></div>
         </div>
         {% endfor %}
     {% else %}
