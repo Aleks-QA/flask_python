@@ -8,9 +8,96 @@ AutoQA
 
 {% block body %}
 
-<div class="container">
+<div class="container index">
     <h1> Автоматизация тестирования с помощью Selenium и Python </h1>
-
+    <div class="method top">
+    <h3>Основные методы базового класса </h3>
+        <div class="method top">
+            <h6>def element_is_visible(self, locator, timeout=20):</h6>
+                <ul>
+                    <li class="comment"> """Ожидание проверки того, что элемент присутствует в DOM страницы и виден.""" </li>
+                    <li> return wait(self.driver, timeout).until(EC.visibility_of_element_located(locator)) </li>
+                </ul>
+            <h6>def elements_are_visible(self, locator, timeout=20): </h6>
+                <ul>
+                    <li class="comment"> """Ожидание проверки того, что все элементы присутствуют в DOM страницы и видны.""" </li>
+                    <li>  return wait(self.driver, timeout).until(EC.visibility_of_all_elements_located(locator)) </li>
+                </ul>
+            <h6>def element_is_present(self, locator, timeout=20):  </h6>
+                <ul>
+                    <li class="comment">  """Ожидание проверки наличия элемента в DOM страницы.""" </li>
+                    <li> return wait(self.driver, timeout).until(EC.presence_of_element_located(locator)) </li>
+                </ul>
+            <h6>def elements_are_present(self, locator, timeout=20):  </h6>
+                <ul>
+                    <li class="comment"> """Ожидание проверки наличия хотя бы одного элемента на веб-странице.""" </li>
+                    <li> return wait(self.driver, timeout).until(EC.presence_of_all_elements_located(locator)) </li>
+                </ul>
+            <h6>def element_is_not_visible(self, locator, timeout=20):  </h6>
+                <ul>
+                    <li class="comment">  """Ожидание проверки того, что элемент либо невидим, либо отсутствует в DOM.""" </li>
+                    <li> return wait(self.driver, timeout).until(EC.invisibility_of_element_located(locator)) </li>
+                </ul>
+            <h6> def element_is_clickable(self, locator, timeout=20):  </h6>
+                <ul>
+                    <li class="comment"> """Ожидание проверки, что элемент видно и включен, поэтому вы можете щелкнуть его.""" </li>
+                    <li> return wait(self.driver, timeout).until(EC.element_to_be_clickable(locator)) </li>
+                </ul>
+            <h6> def text_present_in_element(self, locator, text, timeout=20):  </h6>
+                <ul>
+                    <li class="comment"> Ожидание проверки наличия данного текста в указанном элементе.""" </li>
+                    <li> return wait(self.driver, timeout).until(EC.text_to_be_present_in_element(locator, text)) </li>
+                </ul>
+            <h6>  def go_to_element(self, element): </h6>
+                <ul>
+                    <li class="comment"> """Перейти к элементу""" </li>
+                    <li> self.driver.execute_script("arguments[0].scrollIntoView();", element) </li>
+                </ul>
+            <h6> def action_double_click(self, element):  </h6>
+                <ul>
+                    <li class="comment"> """Двойной клик""" </li>
+                    <li> action = ActionChains(self.driver) </li>
+                    <li> action.double_click(element) </li>
+                    <li> action.perform() </li>
+                </ul>
+            <h6> def action_right_click(self, element):  </h6>
+                <ul>
+                    <li class="comment">  """Клик правой кнопкой""" </li>
+                    <li> action = ActionChains(self.driver) </li>
+                    <li> action.context_click(element) </li>
+                    <li> action.perform() </li>
+                </ul>
+            <h6> def remove_element(self, locator, timeout=20):  </h6>
+                <ul>
+                    <li class="comment"> """Удалить видимый элемент""" </li>
+                    <li> element = self.element_is_visible(locator, timeout) </li>
+                    <li> self.driver.execute_script("arguments[0].remove();", element) </li>
+                </ul>
+            <h6> def get_current_url(self): </h6>
+                <ul>
+                    <li class="comment"> """Метод возвращающий URL""" </li>
+                    <li> get_url = self.driver.current_url </li>
+                    <li> print(f'Current URL: {get_url}') </li>
+                    <li> return get_url </li>
+                </ul>
+            <h6> def get_screenshot(self):  </h6>
+                <ul>
+                    <li class="comment"> """Сделать скриншот""" </li>
+                    <li> now_date = (datetime.datetime.utcnow() + datetime.timedelta(hours=+3)).strftime("%Y.%m.%d.%H.%M.%S") </li>
+                    <li> name_screenshot = 'screenshot_' + now_date + '.png' </li>
+                    <li> self.driver.save_screenshot('.\\screen\\' + name_screenshot) </li>
+                    <li> print('Сделан скриншот') </li>
+                </ul>
+            <h6> def get_screenshot(self):  </h6>
+                <ul>
+                    <li class="comment"> """Сделать скриншот""" </li>
+                    <li> now_date = (datetime.datetime.utcnow() + datetime.timedelta(hours=+3)).strftime("%Y.%m.%d.%H.%M.%S") </li>
+                    <li> name_screenshot = 'screenshot_' + now_date + '.png' </li>
+                    <li> self.driver.save_screenshot('.\\screen\\' + name_screenshot) </li>
+                    <li> print('Сделан скриншот') </li>
+                </ul>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

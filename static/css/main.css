@@ -2,6 +2,18 @@
 	list-style-type: none;
 }
 
+.comment{
+    color: #00951b;
+}
+
+.method{
+    margin-left:  30px;
+}
+
+.top{
+    margin-top:  20px;
+}
+
 .style_body{
     /*background-color: #f0f0f0;*/
     background-color: white;
