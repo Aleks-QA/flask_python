@@ -12,6 +12,11 @@
 
 #right{float: right;}
 
+.copyleft {
+  display:inline-block;
+  transform: rotate(180deg);
+}
+
 pre{
     margin:10px 1px 10px 30px;
     white-space: pre-wrap;
