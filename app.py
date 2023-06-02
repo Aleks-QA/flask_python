@@ -55,11 +55,6 @@ def posts_delete(id):
         return "При удалении статьи произошла ошибка"
 
 
-@app.route('/about')
-def about():
-    return render_template("about.html")
-
-
 @app.route('/agile')
 def agile():
     return render_template("agile.html")
