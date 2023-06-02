@@ -70,11 +70,6 @@ def css():
     return render_template("css.html")
 
 
-@app.route('/questions')
-def questions():
-    return render_template("questions.html")
-
-
 @app.route('/git')
 def git():
     return render_template("git.html")
@@ -115,6 +110,11 @@ def post_update(id):
             return "При обновлении статьи произошла ошибка"
     else:
         return render_template("post_update.html", article=article)
+
+
+@app.route('/questions')
+def questions():
+    return render_template("questions.html")
 
 
 if __name__ == "__main__":
