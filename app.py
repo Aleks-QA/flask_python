@@ -70,6 +70,11 @@ def css():
     return render_template("css.html")
 
 
+@app.route('/questions')
+def questions():
+    return render_template("questions.html")
+
+
 @app.route('/git')
 def git():
     return render_template("git.html")
