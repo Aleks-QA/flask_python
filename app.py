@@ -9,13 +9,6 @@ app.config['SQlALCHEMY_TRACK_MODIFICATION'] = False
 db = SQLAlchemy(app)
 
 
-# > python
-# >>> from app import app, db
-# >>> app.app_context().push()
-# >>> db.create_all()
-# >>> exit()
-
-
 class Article(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
